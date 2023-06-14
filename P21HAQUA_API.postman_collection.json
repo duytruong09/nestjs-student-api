@@ -1,0 +1,5049 @@
+{
+  "info": {
+    "_postman_id": "b7c9b42a-c991-4923-90fd-9d0653fab1bc",
+    "name": "reviewsource_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20825365"
+  },
+  "item": [
+    {
+      "name": "Features",
+      "item": [
+        {
+          "name": "f1-Customer",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/customers",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "customers"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"0123123123\",\n    \"password\": \"123123\",\n    \"typeRegister\": \"haqua\",\n    \"tokenLogin\": \"token login: kkkkkkkkkkkkk\",\n    \"deviceID\": \"token login: kkkkkkkkkkkkk\",\n    \"avatar\": \"link avatar\",\n    \"fullName\": \"custommer 2\",\n    \"born\": 1656066422618 ,\n    \"gender\": 1,\n    \"address\": \"Da nang\",\n    \"province\": \"Ngu Hanh Son\",\n    \"nation\": \"Khue My\",\n    \"job\": \"Dev\",\n    \"experiences\": [{\"idField\": \"id123123\", \"fieldName\": \"fieldName\", \"year\": 2020}],\n    \"capacity\": [\"capacity 1\", \"capacity 2\"],\n    \"myAlbum\": [\"album 1\", \"album 2\"],\n    \"bankName\": \"BIDV\",\n    \"branchName\": \"Branch Bank\",\n    \"bankAccountNumber\": 123123123,\n    \"bankAccountName\": \"bankAccountName 2\",\n    \"isGetNotification\": false\n\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/customers",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "customers"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"0123123123\",\n    \"password\": \"123123\",\n    \"typeRegister\": \"haqua\",\n    \"tokenLogin\": \"token login: kkkkkkkkkkkkk\",\n    \"deviceID\": \"token login: kkkkkkkkkkkkk\",\n    \"avatar\": \"link avatar\",\n    \"fullName\": \"custommer 1\",\n    \"born\": 1656066422618 ,\n    \"gender\": 1,\n    \"address\": \"Da nang\",\n    \"province\": \"Ngu Hanh Son\",\n    \"nation\": \"Khue My\",\n    \"job\": \"Dev\",\n    \"experiences\": [{\"idField\": \"id123123\", \"fieldName\": \"fieldName\", \"year\": 2020}],\n    \"capacity\": [\"capacity 1\", \"capacity 2\"],\n    \"myAlbum\": [\"album 1\", \"album 2\"],\n    \"bankName\": \"BIDV\",\n    \"branchName\": \"Branch Bank\",\n    \"bankAccountNumber\": 123123123,\n    \"bankAccountName\": \"bankAccountName 1\",\n    \"isGetNotification\": false,\n     \"certificates\": [\n      {\n      \"idCertificate\": \"62b94cc898453eaf80dad775\",\n      \"numberTest\": 10,\n      \"status\":1\n    }]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/customers/62b92f4fc1e3048c334b7be8",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "customers", "62b92f4fc1e3048c334b7be8"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/customers/62b90b2ad49ab828450bd587",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "customers", "62b90b2ad49ab828450bd587"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/customers/paginate?page=1&fields=id",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "customers", "paginate"],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "1",
+                      "disabled": true
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/customers/62b5657fa7220ead810d5d45",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "customers", "62b5657fa7220ead810d5d45"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f2-Specialize",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\",\n    \"position\": \"Position 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/specializes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "specializes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test new\",\n    \"position\": \"Position new\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/specializes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "specializes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Subject name 2\",\n    \"position\": \"Subject position 2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/specializes/62b5657fa7220ead810d5d45",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "specializes", "62b5657fa7220ead810d5d45"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/specializes/62b732ecc297de442dd15fbe",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "specializes", "62b732ecc297de442dd15fbe"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/specializes/paginate?page=1&fields=subSpecializes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "specializes", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "subSpecializes"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "1",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/specializes/62b5657fa7220ead810d5d45",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "specializes", "62b5657fa7220ead810d5d45"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f3-SubSpecialize",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/sub-specializes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "sub-specializes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idSpecialize\": \"62bc16362a233d7ce647bb5f\",\n    \"name\": \"Subspecialize 2\",\n    \"position\": \"Posisition subspecialize 2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/sub-specializes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "sub-specializes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idSpecialize\": \"62b92ff4c1e3048c334b7bf7\",\n    \"name\": \"Subspecialize 1\",\n    \"position\": \"Posisition subspecialize 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/sub-specializes/62b931968a9bd7969b968820",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "sub-specializes", "62b931968a9bd7969b968820"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/sub-specializes/62b931688a9bd7969b968814",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "sub-specializes", "62b931688a9bd7969b968814"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/sub-specializes/paginate?populate=idSpecialize&fields=id",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "sub-specializes", "paginate"],
+                  "query": [
+                    {
+                      "key": "populate",
+                      "value": "idSpecialize"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/sub-specializes/62b40b81d8042338cd5e61da",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "sub-specializes", "62b40b81d8042338cd5e61da"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f4-UserSpecialize",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idUser\": \"62b40d3404cb133be4876fc7\",\n    \"idSubSpecializes\": [\"62b40b81d8042338cd5e61da\", \"62b40b89d8042338cd5e61dc\"],\n    \"helpYou\": \"help you 4\",\n    \"suggestedTopic\": \"suggested topic 4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/user-specializes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "user-specializes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idUser\": \"62bc15262a233d7ce647bb56\",\n    \"idSubSpecializes\": [\"62bc16682a233d7ce647bb63\", \"62bc16542a233d7ce647bb61\"],\n    \"helpYou\": \"help you 2\",\n    \"suggestedTopic\": \"suggested topic 2\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/user-specializes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "user-specializes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idCustomer\": \"62b90b2ad49ab828450bd587\",\n    \"idSubSpecializes\": [\"62b90e562acad62dd64f993f\"],\n    \"helpYou\": \"help you 2\",\n    \"suggestedTopic\": \"suggested topic 2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/user-specializes/62b90f647e8a43348153ae2e",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "user-specializes", "62b90f647e8a43348153ae2e"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/user-specializes/62b9333f8a9bd7969b968838",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "user-specializes", "62b9333f8a9bd7969b968838"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/user-specializes/paginate?fields=id",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "user-specializes", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "null",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "idSubSpecializes,idUser,idUser.password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "-helpYou",
+                      "disabled": true
+                    },
+                    {
+                      "key": "helpYou",
+                      "value": "help you 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "suggestedTopic",
+                      "value": "suggested topic 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "1",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/user-specializes/62b90f917e8a43348153ae31",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "user-specializes", "62b90f917e8a43348153ae31"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f5-subject",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idUser\": \"62b40d3404cb133be4876fc7\",\n    \"idSubSpecializes\": [\"62b40b81d8042338cd5e61da\", \"62b40b89d8042338cd5e61dc\"],\n    \"helpYou\": \"help you 4\",\n    \"suggestedTopic\": \"suggested topic 4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/subjects",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "subjects"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Subject name 2\",\n    \"position\": \"Subject posisition 2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/subjects",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "subjects"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Subject name 2\",\n    \"position\": \"Subject position 2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/subjects/62b910637e8a43348153ae40",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "subjects", "62b910637e8a43348153ae40"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/subjects/62b910637e8a43348153ae40",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "subjects", "62b910637e8a43348153ae40"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/subjects/paginate?fields=name",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "subjects", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "null",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "idSubSpecializes,idUser,idUser.password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "-helpYou",
+                      "disabled": true
+                    },
+                    {
+                      "key": "helpYou",
+                      "value": "help you 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "suggestedTopic",
+                      "value": "suggested topic 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "name"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/subjects/62b910637e8a43348153ae40",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "subjects", "62b910637e8a43348153ae40"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f6-certificate",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idUser\": \"62b40d3404cb133be4876fc7\",\n    \"idSubSpecializes\": [\"62b40b81d8042338cd5e61da\", \"62b40b89d8042338cd5e61dc\"],\n    \"helpYou\": \"help you 4\",\n    \"suggestedTopic\": \"suggested topic 4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/certificates",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "certificates"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idSubSpecialize\": \"62bc16682a233d7ce647bb63\",\n  \"title\": \"Certificate title 2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/certificates",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "certificates"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/certificates",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "certificates"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/certificates/62b94cc898453eaf80dad775",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "certificates", "62b94cc898453eaf80dad775"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/certificates/paginate?fields=id",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "certificates", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "null",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "idSubSpecializes,idUser,idUser.password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "-helpYou",
+                      "disabled": true
+                    },
+                    {
+                      "key": "helpYou",
+                      "value": "help you 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "suggestedTopic",
+                      "value": "suggested topic 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/certificates/62428462dcf5391260b20946",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "certificates", "62428462dcf5391260b20946"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f7-quiz",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idUser\": \"62b40d3404cb133be4876fc7\",\n    \"idSubSpecializes\": [\"62b40b81d8042338cd5e61da\", \"62b40b89d8042338cd5e61dc\"],\n    \"helpYou\": \"help you 4\",\n    \"suggestedTopic\": \"suggested topic 4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/quizzes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "quizzes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idCertificate\": \"62bc17fa2a233d7ce647bb97\",\n  \"typeQuestion\": 1,\n  \"imageQuestion\": \"QUIZ imageQuestion 1\",\n  \"audioQuestion\": \"QUIZ audioQuestion 1\",\n  \"videoQuestion\": \"QUIZ videoQuestion 1\",\n  \"answers\": [\n     {\n        \"typeAnswer\": 1,\n        \"text\": \"answers text 1\",\n        \"image\": \"answers image 1\"\n      }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/quizzes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "quizzes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/quizzes",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "quizzes"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/quizzes/62bc183a2a233d7ce647bba3",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "quizzes", "62bc183a2a233d7ce647bba3"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/quizzes/paginate?populate=id",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "quizzes", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "null",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "idSubSpecializes,idUser,idUser.password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "-helpYou",
+                      "disabled": true
+                    },
+                    {
+                      "key": "helpYou",
+                      "value": "help you 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "suggestedTopic",
+                      "value": "suggested topic 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "populate",
+                      "value": "id"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/quizzes/62b914323f864b41dc53b7e0",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "quizzes", "62b914323f864b41dc53b7e0"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f8-question",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idUser\": \"62b40d3404cb133be4876fc7\",\n    \"idSubSpecializes\": [\"62b40b81d8042338cd5e61da\", \"62b40b89d8042338cd5e61dc\"],\n    \"helpYou\": \"help you 4\",\n    \"suggestedTopic\": \"suggested topic 4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/questions",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "questions"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idUser\": \"62bc15262a233d7ce647bb56\",\n  \"idSubSpecialize\": \"62bc17b52a233d7ce647bb8d\",\n  \"content\": \"Question content 1\",\n  \"attachImages\": [\"Question attachImages 1\", \"Question attachImages 2\"],\n  \"attachFiles\": [\"Question attachFiles 1\", \"Question attachFiles 2\"],\n  \"hashTag\": \"Question hashTag 1\",\n  \"moneyFrom\": 12000,\n  \"moneyTo\": 18000,\n  \"priorityLanguage\": 0,\n  \"priorityGender\": 0,\n  \"priorityRegion\": 0,\n  \"priorityExperience\": 0,\n  \"priorityExpert\": 0,\n  \"priorityRank\": 0,\n  \"totalTime\": 1656494457389 ,\n  \"timeUsed\": 1656494457389 ,\n  \"historyTimeUsed\": [\n      {\n      \"startTime\":1656494457389 ,\n      \"endTime\":1656494457389 \n  }\n  ],\n  \"statusPayment\": 0,\n  \"statusQuestion\": 0,\n  \"answerList\":\n  [{\n    \"idUser\": \"62bc15c22a233d7ce647bb59\",\n    \"statusSelect\": 1\n  }],\n  \"finalPrice\": 18000,\n  \"comment\": \"Question comment 1\",\n  \"denounce\": \"Question denounce 1\",\n  \"linkRecords\":[ \"Question linkRecords 1\",  \"Question linkRecords 2\"],\n  \"statusShare\":1,\n  \"mySharePrice\": 12000,\n  \"partnerSharePrice\": 12000\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/questions",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "questions"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/questions",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "questions"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/questions/62ba610ac9455b386e91c927",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "questions", "62ba610ac9455b386e91c927"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/questions/paginate?statusPayment=2",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "questions", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "null",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "idSubSpecializes,idUser,idUser.password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "-helpYou",
+                      "disabled": true
+                    },
+                    {
+                      "key": "helpYou",
+                      "value": "help you 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "suggestedTopic",
+                      "value": "suggested topic 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "statusPayment",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/questions",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "questions"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f9-transaction",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"idUser\": \"62b40d3404cb133be4876fc7\",\n    \"idSubSpecializes\": [\"62b40b81d8042338cd5e61da\", \"62b40b89d8042338cd5e61dc\"],\n    \"helpYou\": \"help you 4\",\n    \"suggestedTopic\": \"suggested topic 4\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/transactions",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "transactions"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idUser\": \"62bc15c22a233d7ce647bb59\",\n  \"methodTransaction\": 1,\n  \"statusTransaction\": 1,\n  \"typeTransaction\": 1,\n  \"title\": \"Transaction title 1\",\n  \"money\": 18000,\n  \"transactionImage\": \"Transaction transactionImage 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/transactions",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "transactions"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/transactions",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "transactions"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/transactions/62b91a6317b7f44c9c05e70c",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "transactions", "62b91a6317b7f44c9c05e70c"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/transactions/paginate?fields=id",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "transactions", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "null",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "idSubSpecializes,idUser,idUser.password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "-helpYou",
+                      "disabled": true
+                    },
+                    {
+                      "key": "helpYou",
+                      "value": "help you 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "suggestedTopic",
+                      "value": "suggested topic 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/transactions",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "transactions"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f10-notification",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/notifications",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "notifications"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sendingRange\": 0,\n    \"idUsers\": [\"62bc15c22a233d7ce647bb59\", \"62bc15262a233d7ce647bb56\"],\n    \"typeNotification\": 2,\n    \"idEntity\": \"62bc19932a233d7ce647bbb5\",\n    \"title\": \"Notification title 1\",\n    \"thumbnail\": \"Notification thumbnail 1\",\n    \"summary\": \"Notification summary 1\",\n    \"content\": \"Notification content 1\",\n    \"reads\": [\"62bc15c22a233d7ce647bb59\"]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/notifications",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "notifications"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"reads\": [\n        \"62ba5fd2c9455b386e91c90e\"\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/notifications/62be592b98c0482f2e312961",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "notifications", "62be592b98c0482f2e312961"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/notifications/62bc1a7a2a233d7ce647bbc1",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "notifications", "62bc1a7a2a233d7ce647bbc1"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/notifications/paginate?fields=_id,idUsers,reads,typeNotification",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "notifications", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "null",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "idSubSpecializes,idUser,idUser.password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "-helpYou",
+                      "disabled": true
+                    },
+                    {
+                      "key": "helpYou",
+                      "value": "help you 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "suggestedTopic",
+                      "value": "suggested topic 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "_id,idUsers,reads,typeNotification"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/notifications/62be592f98c0482f2e312963",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "notifications", "62be592f98c0482f2e312963"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "mark as read",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/notifications/markAsRead",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "notifications", "markAsRead"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "f11-review",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/reviews",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "reviews"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idQuestion\": \"62bc19932a233d7ce647bbb5\",\n  \"idAuthor\": \"62bc15c22a233d7ce647bb59\",\n  \"idAnswerer\": \"62bc15262a233d7ce647bb56\",\n  \"reputation\": 10,\n  \"isSatisfied\": true,\n  \"rating\": 5,\n  \"content\": \"Good\",\n  \"isAgreePay\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/reviews",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "reviews"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idQuestion\": \"62ba610ac9455b386e91c927\",\n  \"idAuthor\": \"62b92f4fc1e3048c334b7be8\",\n  \"idAnswerer\": \"62ba5fd2c9455b386e91c90e\",\n  \"reputation\": 10,\n  \"isSatisfied\": true,\n  \"rating\": 5,\n  \"content\": \"Good\",\n  \"isAgreePay\": true,\n  \"complain\": \"\",\n  \"status\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/reviews/62bab10ceea0054478674418",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "reviews", "62bab10ceea0054478674418"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/reviews/62bab10ceea0054478674418",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "reviews", "62bab10ceea0054478674418"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/reviews/paginate?",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "reviews", "paginate"],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "null",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fields",
+                      "value": "idSubSpecializes,idUser,idUser.password",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "-helpYou",
+                      "disabled": true
+                    },
+                    {
+                      "key": "helpYou",
+                      "value": "help you 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "suggestedTopic",
+                      "value": "suggested topic 4",
+                      "disabled": true
+                    },
+                    {
+                      "key": "",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/reviews",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "reviews"]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Common",
+      "item": [
+        {
+          "name": "Province",
+          "item": [
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/province",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "province"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/province/624201a33229bf6a5fea3c49",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "province", "624201a33229bf6a5fea3c49"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/province/62428461dcf5391260b20414",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "province", "62428461dcf5391260b20414"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/province",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "province"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/province/62428461dcf5391260b20414",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "province", "62428461dcf5391260b20414"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "District",
+          "item": [
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/district",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "district"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/district/624201a33229bf6a5fea3c49",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "district", "624201a33229bf6a5fea3c49"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/district/624201a33229bf6a5fea3c49",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "district", "624201a33229bf6a5fea3c49"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/district",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "district"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/district/62428462dcf5391260b20946",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "district", "62428462dcf5391260b20946"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Village",
+          "item": [
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/village",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "village"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 6\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/village/624201a33229bf6a5fea3c49",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "village", "624201a33229bf6a5fea3c49"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/village/624201a33229bf6a5fea3c49",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "village", "624201a33229bf6a5fea3c49"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/village",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "village"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/village/6242846adcf5391260b23972",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "village", "6242846adcf5391260b23972"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "User",
+          "item": [
+            {
+              "name": "find all",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"0123123123\",\n    \"password\": \"123123\",\n    \"typeRegister\": \"haqua\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/users",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "users"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"0123123122\",\n    \"password\": \"123123\",\n    \"typeRegister\": \"haqua\",\n    \"fullName\":\"username\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/users",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "users"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"numberStatisfied\": 1,\n    \"numberNotStatisfied\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/users/update-statitic/62c13039ec118025c1f9bf10",
+                  "host": ["{{url}}"],
+                  "path": [
+                    "v1",
+                    "users",
+                    "update-statitic",
+                    "62c13039ec118025c1f9bf10"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/users/62c12ea5e2c7951f0121d6b3",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "users", "62c12ea5e2c7951f0121d6b3"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"0123123123\",\n    \"password\": \"123123\",\n    \"typeRegister\": \"haqua\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/users/paginate?fields=_id,phone,tokenLogin,typeRegister",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "users", "paginate"],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "_id,phone,tokenLogin,typeRegister"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/users/62c13039ec118025c1f9bf10",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "users", "62c13039ec118025c1f9bf10"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "me",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/users/me",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "users", "me"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "push",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\": \"notificationTitle abc\",\n    \"body\": \"notificationTitle abc\",\n    \"data\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/user/fcm-push",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "user", "fcm-push"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "fcm",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"fcmToken\": \"console.log('checkRoleRBAC', `${role}_${method}_${url}`, roles.get(`${role}_${method}_${url}`));\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/user/fcm-token",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "user", "fcm-token"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "verify",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/user/verify?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQzZTc0YWY4YTZmZmRiMmM3MThmYzMiLCJvdHBDb2RlIjoiNDI4MCIsImlhdCI6MTY0ODYxNzI5MCwiZXhwIjoxNjU3MTcwODkwfQ.YNSMMR9tEtoLc0DOChGf7GRCfYQEPUJP-U08bW7pEDI",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "user", "verify"],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQzZTc0YWY4YTZmZmRiMmM3MThmYzMiLCJvdHBDb2RlIjoiNDI4MCIsImlhdCI6MTY0ODYxNzI5MCwiZXhwIjoxNjU3MTcwODkwfQ.YNSMMR9tEtoLc0DOChGf7GRCfYQEPUJP-U08bW7pEDI"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Auth",
+          "item": [
+            {
+              "name": "sign-up",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"password\": \"12345678\",\n    \"username\": \"user123\",\n    \"email\": \"user123@gmail.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/auth/sign-up",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "auth", "sign-up"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "sign-out",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"fcmToken\": \"console.log('checkRoleRBAC', `${role}_${method}_${url}`, roles.get(`${role}_${method}_${url}`));\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/auth/sign-out",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "auth", "sign-out"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "sign-in",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "const res = pm.response.json(); ",
+                      "pm.environment.set(\"jwtToken\", res['data']['accessToken']);"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"password\": \"12345678\",\n    \"username\": \"user123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/auth/sign-in",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "auth", "sign-in"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "login-with-social",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "const res = pm.response.json(); ",
+                      "pm.environment.set(\"jwtToken\", res['accessToken']);"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"tokenLogin\": \"new acount google 1\",\n    \"typeRegister\": \"google\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/auth/login-with-social",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "auth", "login-with-social"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "login-local",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// const res = pm.response.json(); ",
+                      "// pm.environment.set(\"jwtToken\", res['data']['accessToken']);"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\":\"123456789\",\n    \"password\":\"123123\",\n    \"typeRegister\":\"haqua\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/auth/login-local",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "auth", "login-local"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "signup-local",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "// const res = pm.response.json(); ",
+                      "// pm.environment.set(\"jwtToken\", res['data']['accessToken']);"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"fullName\":\"user 1\",\n    \"phone\":\"387776243\",\n    \"password\":\"123123\",\n    \"typeRegister\":\"haqua\",\n    \"deviceID\":\"deviceID123123123\",\n    \"otpCode\": \"7166\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/auth/signup-local",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "auth", "signup-local"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Otp",
+          "item": [
+            {
+              "name": "phone",
+              "item": [
+                {
+                  "name": "send otp",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{jwtToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"phone\":\"387776242\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/v1/otps/send-otp-phone",
+                      "host": ["{{url}}"],
+                      "path": ["v1", "otps", "send-otp-phone"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "verify otp",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{jwtToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"phone\": \"387776243\",\n    \"otpCode\":\"1493\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/v1/otps/verify-otp-phone",
+                      "host": ["{{url}}"],
+                      "path": ["v1", "otps", "verify-otp-phone"]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "email",
+              "item": [
+                {
+                  "name": "send otp",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{jwtToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email\":\"minh.mchiu@gmail.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/v1/otps/send-otp-email",
+                      "host": ["{{url}}"],
+                      "path": ["v1", "otps", "send-otp-email"]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "verify otp",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{jwtToken}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email\":\"user@gmail.com\",\n    \"otpCode\":\"23123\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{url}}/v1/otps/verify-otp-email",
+                      "host": ["{{url}}"],
+                      "path": ["v1", "otps", "verify-otp-email"]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "find all",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/otps",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "otps"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/otps/62bf9eb0afb8330ee9bab19c",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "otps", "62bf9eb0afb8330ee9bab19c"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "paginate",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"0123123123\",\n    \"password\": \"123123\",\n    \"typeRegister\": \"haqua\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/otps",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "otps"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/v1/otps",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "otps"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Role",
+          "item": [
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"root1\",\n    \"index\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/role-user",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "role-user"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"root1\",\n    \"index\": 50\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/role-user/62485a44589639f8b61c7803",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "role-user", "62485a44589639f8b61c7803"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/role-user/6254d51a8cbd0920a9fb5830",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "role-user", "6254d51a8cbd0920a9fb5830"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/role-user",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "role-user"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/role-user/62485a44589639f8b61c7803",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "role-user", "62485a44589639f8b61c7803"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Upload",
+          "item": [
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "files",
+                      "type": "file",
+                      "src": "/home/minhchiu/Pictures/foods/food-5.jpeg"
+                    },
+                    {
+                      "key": "files",
+                      "type": "file",
+                      "src": "/home/minhchiu/Pictures/foods/food-3.jpg"
+                    },
+                    {
+                      "key": "files",
+                      "type": "file",
+                      "src": [],
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/v1/upload",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "upload"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "confirm",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/upload/tmp/1656643911381_9f7b3ad0617d16109852ad531_d104c5ce0a8284668.jpeg",
+                  "host": ["{{url}}"],
+                  "path": [
+                    "v1",
+                    "upload",
+                    "tmp",
+                    "1656643911381_9f7b3ad0617d16109852ad531_d104c5ce0a8284668.jpeg"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}.",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/static/upload/tmp/1656909060484_816174a3b7ba10699ca832ac2_baa3e71b9bf7254f.jpeg",
+                  "host": ["{{url}}"],
+                  "path": [
+                    "static",
+                    "upload",
+                    "tmp",
+                    "1656909060484_816174a3b7ba10699ca832ac2_baa3e71b9bf7254f.jpeg"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "RBACAPI",
+          "item": [
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"rbac\": \"admin_User_GET_/v1/user\",\n    \"allow\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-api",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-api"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"endpoint\": \"permission\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-api",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-api"]
+                },
+                "description": "Gửi lên endpoint path"
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/rbac-api?filter={\"endpoint\":\"system/notification\"}",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "rbac-api"],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "{\"endpoint\":\"system/notification\"}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "map",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-api/map",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-api", "map"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "RbacUiUser",
+          "item": [
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"endpoint\": \"permission\",\n    \"permission\": {\n        \"READ\": [\n            \"admin\",\n            \"manager\",\n            \"member\"\n        ],\n        \"CREATE\": [\n            \"admin\"\n        ],\n        \"EDIT\": [\n            \"admin\"\n        ],\n        \"DELETE\": [\n            \"admin\"\n        ],\n        \"EXPORT\": [\n            \"admin\"\n        ]\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-user",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-user"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"endpoint\": \"permission\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-user",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-user"]
+                },
+                "description": "Gửi lên endpoint path"
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/rbac-ui-user?filter={\"endpoint\":\"system/notification\"}",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "rbac-ui-user"],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "{\"endpoint\":\"system/notification\"}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "map",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-user/map",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-user", "map"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "table",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-user/table",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-user", "table"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "RbacUiAdmin",
+          "item": [
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"endpoint\": \"permission\",\n    \"permission\": {\n        \"READ\": [\n            \"admin\",\n            \"manager\",\n            \"member\"\n        ],\n        \"CREATE\": [\n            \"admin\"\n        ],\n        \"EDIT\": [\n            \"admin\"\n        ],\n        \"DELETE\": [\n            \"admin\"\n        ],\n        \"EXPORT\": [\n            \"admin\"\n        ]\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-admin",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-admin"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"endpoint\": \"permission\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-admin",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-admin"]
+                },
+                "description": "Gửi lên endpoint path"
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-admin?filter={\"endpoint\":\"system/notification\"}",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-admin"],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "{\"endpoint\":\"system/notification\"}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "map",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-admin/map",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-admin", "map"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "table",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-admin/table",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-admin", "table"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "RbacUiMobile",
+          "item": [
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"endpoint\": \"permission\",\n    \"permission\": {\n        \"READ\": [\n            \"admin\",\n            \"manager\",\n            \"member\"\n        ],\n        \"CREATE\": [\n            \"admin\"\n        ],\n        \"EDIT\": [\n            \"admin\"\n        ],\n        \"DELETE\": [\n            \"admin\"\n        ],\n        \"EXPORT\": [\n            \"admin\"\n        ]\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-mobile",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-mobile"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"endpoint\": \"system/notification3/notification4\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-mobile",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-mobile"]
+                },
+                "description": "Gửi lên endpoint path"
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-mobile?filter={\"endpoint\":\"system/notification\"}",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-mobile"],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "{\"endpoint\":\"system/notification\"}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "map",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-mobile/map",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-mobile", "map"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "table",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/rbac-ui-mobile/table",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "rbac-ui-mobile", "table"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "EndpointAPI",
+          "item": [
+            {
+              "name": "detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-api/625235f80f8d8564edb848f4",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-api", "625235f80f8d8564edb848f4"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/endpoint-api?limit=50",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "endpoint-api"],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    },
+                    {
+                      "key": "page",
+                      "value": "3",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "EndpointUiUser",
+          "item": [
+            {
+              "name": "detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-user/6256a4907ee2ac7502a668d8",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-user", "6256a4907ee2ac7502a668d8"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"resource\": [\n        {\n            \"name\": \"Hệ thống\",\n            \"path\": \"system\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification3\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification4\"\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-user",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-user"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-user/6256a4907ee2ac7502a668d8",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-user", "6256a4907ee2ac7502a668d8"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"resource\": [\n        {\n            \"name\": \"Hệ thống\",\n            \"path\": \"system\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification3\"\n        },\n        {\n            \"name\": \"Thông báo 5\",\n            \"path\": \"notification5\"\n        }\n    ],\n    \"oldEndpoint\": \"system/notification3/notification5\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-user",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-user"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-user",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-user"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "table",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-user/table",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-user", "table"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "EndpointUiAdmin",
+          "item": [
+            {
+              "name": "detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-admin/6256a3f9a3f80f74d440bef8",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": [
+                    "v1",
+                    "endpoint-ui-admin",
+                    "6256a3f9a3f80f74d440bef8"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"resource\": [\n        {\n            \"name\": \"Hệ thống\",\n            \"path\": \"system\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification3\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification4\"\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-admin",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-admin"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-admin/6256a3f9a3f80f74d440bef8",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": [
+                    "v1",
+                    "endpoint-ui-admin",
+                    "6256a3f9a3f80f74d440bef8"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"resource\": [\n        {\n            \"name\": \"Hệ thống\",\n            \"path\": \"system\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification3\"\n        },\n        {\n            \"name\": \"Thông báo 5\",\n            \"path\": \"notification5\"\n        }\n    ],\n    \"oldEndpoint\": \"system/notification3/notification5\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-admin",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-admin"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-admin",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-admin"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "table",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-admin/table",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-admin", "table"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "EndpointUiMobile",
+          "item": [
+            {
+              "name": "detail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-mobile/6256a3d7ed54e0c89c99da05",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": [
+                    "v1",
+                    "endpoint-ui-mobile",
+                    "6256a3d7ed54e0c89c99da05"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"resource\": [\n        {\n            \"name\": \"Hệ thống\",\n            \"path\": \"system\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification5\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification4\"\n        }\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-mobile",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-mobile"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Test 1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-mobile/6256a3bca3f80f74d440bead",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": [
+                    "v1",
+                    "endpoint-ui-mobile",
+                    "6256a3bca3f80f74d440bead"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"resource\": [\n        {\n            \"name\": \"Hệ thống\",\n            \"path\": \"system\"\n        },\n        {\n            \"name\": \"Thông báo\",\n            \"path\": \"notification3\"\n        },\n        {\n            \"name\": \"Thông báo 5\",\n            \"path\": \"notification5\"\n        }\n    ],\n    \"oldEndpoint\": \"system/notification3/notification5\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-mobile",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-mobile"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-mobile",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-mobile"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "table",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/endpoint-ui-mobile/table",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "endpoint-ui-mobile", "table"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "ExportFiles",
+          "item": [
+            {
+              "name": "Export-pdf",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjMzZmIzMmM0NjA4ZjExNDQyYzFlYmEiLCJyb2xlIjoicm9vdCIsInZlcmlmaWVkIjp0cnVlLCJpYXQiOjE2NTMyODk1MzQsImV4cCI6MTczOTYwMzEzNH0.83mhnZ7DWbciydvR65HiD8KObn3AdRBwq04g8IVAmzo",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/export-files/pdf",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "export-files", "pdf"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "FileManager",
+          "item": [
+            {
+              "name": "pagination",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/v1/file-manager",
+                  "host": ["{{url}}"],
+                  "path": ["v1", "file-manager"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "detail",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/file-manager/625882a2c16a606d8960d48b",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "file-manager", "625882a2c16a606d8960d48b"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{jwtToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/v1/file-manager/625882a2c16a606d8960d48b",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["v1", "file-manager", "625882a2c16a606d8960d48b"]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
