@@ -20,6 +20,10 @@ import SpecializeModule from '@features/f1-specialize/specialize.module';
 import StudentModule from '@features/f2-baitap1/baitap1.module';
 import KhoaModule from '@features/f2-khoa/khoa.module';
 // import LopModule from '@features/f2-lop/lop.module';
+import SinhVienModule from '@features/f2-sinhvien/sinhvien.module';
+import LopModule from '@features/f2-lop/lop.module';
+import MonHocModule from '@features/f2-monhoc/monhoc.module';
+import KetQuaModule from '@features/f2-ketqua/ketqua.module';
 import ProvinceModule from './common/c6-province/province.module';
 import DistrictModule from './common/c7-district/district.module';
 import VillageModule from './common/c8-village/village.module';
@@ -56,8 +60,12 @@ const routes: Routes = [
 
       // Features
       { path: '/specializes', module: SpecializeModule },
-      { path: '/students', module: StudentModule },
+      { path: '/sinhviens', module: SinhVienModule },
       { path: '/khoas', module: KhoaModule },
+      { path: '/lops', module: LopModule },
+      { path: '/monhocs', module: MonHocModule },
+      { path: '/ketquas', module: KetQuaModule },
+      { path: '/baitaps', module: BaiTapModule },
     ],
   },
 ];
@@ -93,9 +101,12 @@ const imports = [
   DashboardModule,
 
   // features
-  SpecializeModule,
-  StudentModule,
+  SinhVienModule,
   KhoaModule,
+  LopModule,
+  MonHocModule,
+  KetQuaModule,
+  BaiTapModule,
 ];
 
 if (ShareFunction.checkIsConfigS3Storage()) {
