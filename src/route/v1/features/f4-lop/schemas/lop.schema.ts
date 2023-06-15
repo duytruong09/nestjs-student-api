@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { Khoa } from '../../f2-khoa/schemas/khoa.schema';
+import { Khoa } from '../../f3-khoa/schemas/khoa.schema';
 
 @Schema({ timestamps: true, versionKey: false })
 export class Lop {

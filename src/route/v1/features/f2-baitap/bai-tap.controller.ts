@@ -18,14 +18,14 @@ import ParseObjectIdPipe from '@pipe/parse-object-id.pipe';
 import { ApiQueryParams } from '@decorator/api-query-params.decorator';
 import AqpDto from '@interceptor/aqp/aqp.dto';
 import { ApiTags } from '@nestjs/swagger';
-import BaiTap1Service from './bai-tap1.service';
+import BaiTapService from './bai-tap.service';
 
-@ApiTags('BaiTap1s')
+@ApiTags('BaiTaps')
 @UseInterceptors(WrapResponseInterceptor)
 @Controller()
-export default class BaiTap1Controller {
+export default class BaiTapController {
   constructor(
-    private readonly baiTap1Service: BaiTap1Service,
+    private readonly baiTapService: BaiTapService,
   ) { }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau1')
   @HttpCode(200)
-  async cau1(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau1(query);
+  async cau1(): Promise<any> {
+    return this.baiTapService.cau1();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -46,8 +46,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau2')
   @HttpCode(200)
-  async cau2(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau2(query);
+  async cau2(): Promise<any> {
+    return this.baiTapService.cau2();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -58,8 +58,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau3')
   @HttpCode(200)
-  async cau3(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau3(query);
+  async cau3(): Promise<any> {
+    return this.baiTapService.cau3();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -70,8 +70,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau4')
   @HttpCode(200)
-  async cau4(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau4(query);
+  async cau4(): Promise<any> {
+    return this.baiTapService.cau4();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -82,8 +82,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau5')
   @HttpCode(200)
-  async cau5(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau5(query);
+  async cau5(): Promise<any> {
+    return this.baiTapService.cau5();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -94,8 +94,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau6')
   @HttpCode(200)
-  async cau6(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau6(query);
+  async cau6(): Promise<any> {
+    return this.baiTapService.cau6();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -106,8 +106,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau7')
   @HttpCode(200)
-  async cau7(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau7(query);
+  async cau7(): Promise<any> {
+    return this.baiTapService.cau7();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -118,8 +118,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau8')
   @HttpCode(200)
-  async cau8(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau8(query);
+  async cau8(): Promise<any> {
+    return this.baiTapService.cau8();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -130,8 +130,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau9')
   @HttpCode(200)
-  async cau9(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau9(query);
+  async cau9(): Promise<any> {
+    return this.baiTapService.cau9();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -142,8 +142,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau10')
   @HttpCode(200)
-  async cau10(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau10(query);
+  async cau10(): Promise<any> {
+    return this.baiTapService.cau10();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -156,8 +156,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau11')
   @HttpCode(200)
-  async cau11(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau11();
+  async cau11(): Promise<any> {
+    return this.baiTapService.cau11();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -170,8 +170,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau12')
   @HttpCode(200)
-  async cau12(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau12();
+  async cau12(): Promise<any> {
+    return this.baiTapService.cau12();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -184,8 +184,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau13')
   @HttpCode(200)
-  async cau13(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau13();
+  async cau13(): Promise<any> {
+    return this.baiTapService.cau13();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -198,8 +198,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau14')
   @HttpCode(200)
-  async cau14(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau14();
+  async cau14(): Promise<any> {
+    return this.baiTapService.cau14();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -213,8 +213,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau15')
   @HttpCode(200)
-  async cau15(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau15();
+  async cau15(): Promise<any> {
+    return this.baiTapService.cau15();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -227,8 +227,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau16')
   @HttpCode(200)
-  async cau16(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau16();
+  async cau16(): Promise<any> {
+    return this.baiTapService.cau16();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -241,8 +241,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau17')
   @HttpCode(200)
-  async cau17(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau17();
+  async cau17(): Promise<any> {
+    return this.baiTapService.cau17();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -256,8 +256,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau18')
   @HttpCode(200)
-  async cau18(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau18();
+  async cau18(): Promise<any> {
+    return this.baiTapService.cau18();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -270,8 +270,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau19')
   @HttpCode(200)
-  async cau19(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau19();
+  async cau19(): Promise<any> {
+    return this.baiTapService.cau19();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -284,8 +284,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau20')
   @HttpCode(200)
-  async cau20(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau20();
+  async cau20(): Promise<any> {
+    return this.baiTapService.cau20();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -298,8 +298,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau21')
   @HttpCode(200)
-  async cau21(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau21();
+  async cau21(): Promise<any> {
+    return this.baiTapService.cau21();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -310,8 +310,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau22')
   @HttpCode(200)
-  async cau22(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau22();
+  async cau22(): Promise<any> {
+    return this.baiTapService.cau22();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -324,8 +324,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau23')
   @HttpCode(200)
-  async cau23(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau23();
+  async cau23(): Promise<any> {
+    return this.baiTapService.cau23();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -338,8 +338,8 @@ export default class BaiTap1Controller {
    */
   @Get('cau24')
   @HttpCode(200)
-  async cau24(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau24();
+  async cau24(): Promise<any> {
+    return this.baiTapService.cau24();
   }
 
   /**--------------------------------------------------------------------------------------------------------------
@@ -355,7 +355,7 @@ export default class BaiTap1Controller {
    */
   @Get('cau25')
   @HttpCode(200)
-  async cau25(@Query() query: any): Promise<any> {
-    return this.baiTap1Service.cau25();
+  async cau25(): Promise<any> {
+    return this.baiTapService.cau25();
   }
 }

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { SinhVien, SinhVienSchema } from '../f2-sinhvien/schemas/sinhvien.schema';
+import { SinhVien, SinhVienSchema } from './schemas/sinhvien.schema';
 
 import SinhVienController from './sinhvien.controller';
 import SinhVienService from './sinhvien.service';
