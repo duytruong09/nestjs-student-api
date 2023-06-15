@@ -17,6 +17,9 @@ import HistoryModule from '@common/c9-history/history.module';
 
 import DashboardModule from '@common/c10-dashboard/dashboard.module';
 import SpecializeModule from '@features/f1-specialize/specialize.module';
+import StudentModule from '@features/f2-baitap1/baitap1.module';
+import KhoaModule from '@features/f2-khoa/khoa.module';
+// import LopModule from '@features/f2-lop/lop.module';
 import ProvinceModule from './common/c6-province/province.module';
 import DistrictModule from './common/c7-district/district.module';
 import VillageModule from './common/c8-village/village.module';
@@ -53,6 +56,8 @@ const routes: Routes = [
 
       // Features
       { path: '/specializes', module: SpecializeModule },
+      { path: '/students', module: StudentModule },
+      { path: '/khoas', module: KhoaModule },
     ],
   },
 ];
@@ -89,6 +94,8 @@ const imports = [
 
   // features
   SpecializeModule,
+  StudentModule,
+  KhoaModule,
 ];
 
 if (ShareFunction.checkIsConfigS3Storage()) {
