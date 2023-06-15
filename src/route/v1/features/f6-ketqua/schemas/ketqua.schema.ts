@@ -1,8 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import * as mongoose from 'mongoose';
-import { SinhVien } from '../../f2-sinhvien/schemas/sinhvien.schema';
-import { MonHoc } from '../../f2-monhoc/schemas/monhoc.schema';
+import { SinhVien } from '@features/f7-sinhvien/schemas/sinhvien.schema';
+import { MonHoc } from '@features/f5-monhoc/schemas/monhoc.schema';
 
 @Schema({ timestamps: true, versionKey: false })
 export class KetQua {

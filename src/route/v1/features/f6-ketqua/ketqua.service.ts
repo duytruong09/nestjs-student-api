@@ -12,4 +12,8 @@ export default class KetQuaService extends BaseService<KetQuaDocument> {
   ) {
     super(logger, ketquaRepository);
   }
+
+  public async aggregate(pipeline: any): Promise<any> {
+    return this.ketquaRepository.aggregate(pipeline);
+  }
 }

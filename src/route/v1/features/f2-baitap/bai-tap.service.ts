@@ -1,28 +1,125 @@
-import { PaginateModel } from 'mongoose';
-import { InjectModel } from '@nestjs/mongoose';
 import { Injectable } from '@nestjs/common';
-
+import CustomLoggerService from '@lazy-module/logger/logger.service';
+import BaseService from '@base-inherit/base.service';
+import { SinhVienDocument } from '@features/f7-sinhvien/schemas/sinhvien.schema';
+import SinhVienRepository from '@features/f7-sinhvien/dto/sinhvien.repository';
+import SinhVienService from '@features/f7-sinhvien/sinhvien.service';
+import LopService from '@features/f4-lop/lop.service';
+import KetQuaService from '@features/f6-ketqua/ketqua.service';
 import * as mongoose from 'mongoose';
-import { SinhVien, SinhVienDocument } from '@features/f2-sinhvien/schemas/sinhvien.schema';
-import { KetQua, KetQuaDocument } from '@features/f2-ketqua/schemas/ketqua.schema';
+import BaiTapRepository from './bai-tap.repository';
 
 @Injectable()
-export default class BaiTap1Repository {
-  private readonly sinhVienModel: PaginateModel<SinhVienDocument>;
-
-  private readonly ketQuaModel: PaginateModel<KetQuaDocument>;
-
+export default class BaiTapService {
   constructor(
-    @InjectModel(SinhVien.name) sinhVienModel: PaginateModel<SinhVienDocument>,
-    @InjectModel(KetQua.name) ketQuaModel: PaginateModel<KetQuaDocument>,
+    readonly logger: CustomLoggerService,
+    readonly baiTapRepository: BaiTapRepository,
+    readonly sinhvienService: SinhVienService,
+    readonly lopService: LopService,
+    readonly ketquaService: KetQuaService,
   ) {
-    this.sinhVienModel = sinhVienModel;
-    this.ketQuaModel = ketQuaModel;
+    this.baiTapRepository = baiTapRepository;
   }
 
-  // async aggregate(pipeline: any): Promise<any[]> {
-  //   return this.ketQuaModel.aggregate().exec(pipeline);
-  // }
+  async cau1(): Promise<any> {
+    const pipeline = {
+      projection: {
+        tenLop: 1,
+        maKhoa: 1,
+      },
+    };
+    return this.lopService.findManyBy(pipeline);
+  }
+
+  async cau2(): Promise<any> {
+    const pipeline = {
+      projection: {
+        hoTen: 1,
+        nu: 1,
+        hocBong: 1,
+      },
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
+
+  async cau3(): Promise<any> {
+    const pipeline = {
+      filter: {
+        hocBong: { $gt: 0 },
+      },
+      projection: {
+        nu: 1,
+        hocBong: 1,
+      },
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
+
+  async cau4(): Promise<any> {
+    const pipeline = {
+      filter: {
+        nu: 'Yes',
+      },
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
+
+  async cau5(): Promise<any> {
+    const pipeline = {
+      filter: {
+        hoTen: { $regex: '.*Tran.*' },
+      },
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
+
+  async cau6(): Promise<any> {
+    const pipeline = {
+      filter: {
+        nu: 'Yes',
+        hocBong: { $gt: 0 },
+      },
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
+
+  async cau7(): Promise<any> {
+    const pipeline = {
+      filter: {
+        $or: [
+          { nu: 'Yes' },
+          { hocBong: { $gt: 0 } },
+        ],
+      },
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
+
+  async cau8(): Promise<any> {
+    const pipeline = {
+      filter: {
+        ngaySinh: {
+          $gte: new Date('1978-01-01T00:00:00Z'),
+          $lt: new Date('1986-01-01T00:00:00Z'),
+        },
+      },
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
+
+  async cau9(): Promise<any> {
+    const pipeline = {
+      sort: '_id',
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
+
+  async cau10(): Promise<any> {
+    const pipeline = {
+      sort: '-hocBong',
+    };
+    return this.sinhvienService.findManyBy(pipeline);
+  }
 
   async cau11(): Promise<any[]> {
     const pipeline = [
@@ -62,7 +159,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.ketQuaModel.aggregate(pipeline).exec();
+    return await this.ketquaService.aggregate(pipeline);
   }
 
   async cau12(): Promise<any[]> {
@@ -93,7 +190,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau13(): Promise<any[]> {
@@ -134,7 +231,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau14(): Promise<any[]> {
@@ -158,7 +255,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau15(): Promise<any[]> {
@@ -190,7 +287,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau16(): Promise<any[]> {
@@ -225,7 +322,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau17(): Promise<any[]> {
@@ -246,7 +343,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau18(): Promise<any[]> {
@@ -278,7 +375,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau19(): Promise<any[]> {
@@ -315,7 +412,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau20(): Promise<any[]> {
@@ -355,7 +452,7 @@ export default class BaiTap1Repository {
       },
     ];
 
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau21(): Promise<any[]> {
@@ -389,12 +486,14 @@ export default class BaiTap1Repository {
         $match: { tongHB: { $gte: 1000000 } },
       },
     ];
-    return await this.sinhVienModel.aggregate(pipeline).exec();
+    return await this.sinhvienService.aggregate(pipeline);
   }
 
   async cau22(): Promise<any[]> {
-    const results = await this.sinhVienModel.find().sort({ hocBong: -1 }).limit(1);
-
+    const results = await this.sinhvienService.findManyBy({
+      sort: '-hocBong',
+      skip: 1,
+    });
     return results;
   }
 
@@ -403,7 +502,7 @@ export default class BaiTap1Repository {
    * @returns
    */
   async cau23(): Promise<any[]> {
-    return await this.sinhVienModel.aggregate([
+    return await this.sinhvienService.aggregate([
       {
         $lookup: {
           from: 'ketquas',
@@ -436,11 +535,28 @@ export default class BaiTap1Repository {
       {
         $limit: 1,
       },
-    ]).exec();
+    ]);
+  }
+
+  async cau24(): Promise<any[]> {
+    const ketQuaResult = await this.ketquaService.findManyBy({
+      filter: {
+        maMH: new mongoose.Types.ObjectId('61862d09a941e609e8fd4cd3'),
+      },
+      projection: ['maSV'],
+    });
+    const results = await this.sinhvienService.findManyBy({
+      filter: {
+        _id: {
+          $nin: ketQuaResult.map((x: any) => x.maSV),
+        },
+      },
+    });
+    return results;
   }
 
   async cau25(): Promise<any[]> {
-    return await this.sinhVienModel.aggregate([
+    return await this.sinhvienService.aggregate([
       {
         $lookup: {
           from: 'lops',
@@ -472,6 +588,6 @@ export default class BaiTap1Repository {
       {
         $limit: 1,
       },
-    ]).exec();
+    ]);
   }
 }

@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
-import { Lop } from '../../f2-lop/schemas/lop.schema';
+import { Lop } from '@features/f4-lop/schemas/lop.schema';
 
 @Schema({ timestamps: true, versionKey: false })
 export class SinhVien {

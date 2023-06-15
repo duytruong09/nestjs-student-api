@@ -13,4 +13,8 @@ export default class SinhVienService extends BaseService<SinhVienDocument> {
   ) {
     super(logger, sinhvienRepository);
   }
+
+  public async aggregate(pipeline: any): Promise<any> {
+    return this.sinhvienRepository.aggregate(pipeline);
+  }
 }
