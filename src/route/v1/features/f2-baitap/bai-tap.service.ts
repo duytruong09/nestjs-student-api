@@ -7,7 +7,10 @@ import SinhVienService from '@features/f7-sinhvien/sinhvien.service';
 import LopService from '@features/f4-lop/lop.service';
 import KetQuaService from '@features/f6-ketqua/ketqua.service';
 import * as mongoose from 'mongoose';
+<<<<<<< HEAD
 import lodash from 'lodash';
+=======
+>>>>>>> 5c729144f243849e465ca3e3a483fe0d96536ae8
 import BaiTapRepository from './bai-tap.repository';
 
 @Injectable()
