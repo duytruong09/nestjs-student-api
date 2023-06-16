@@ -7,14 +7,11 @@ import { KetQua, KetQuaDocument } from './schemas/ketqua.schema';
 
 @Injectable()
 export default class KetQuaRepository extends BaseRepository<KetQuaDocument> {
-  private ketquaModel: PaginateModel<KetQuaDocument>
-
   constructor(
     @InjectModel(KetQua.name) model: PaginateModel<KetQuaDocument>,
-    @InjectModel(KetQua.name) ketquaModel: PaginateModel<KetQuaDocument>,
+    @InjectModel(KetQua.name) private readonly ketquaModel: PaginateModel<KetQuaDocument>,
   ) {
     super(model);
-    this.ketquaModel = ketquaModel;
   }
 
   public async aggregate(pipeline: any): Promise<any> {

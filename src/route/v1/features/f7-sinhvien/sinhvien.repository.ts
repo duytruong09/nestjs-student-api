@@ -7,14 +7,11 @@ import { SinhVien, SinhVienDocument } from './schemas/sinhvien.schema';
 
 @Injectable()
 export default class SinhVienRepository extends BaseRepository<SinhVienDocument> {
-  private sinhvienModel: PaginateModel<SinhVienDocument>
-
   constructor(
     @InjectModel(SinhVien.name) model: PaginateModel<SinhVienDocument>,
-    @InjectModel(SinhVien.name) sinhvienModel: PaginateModel<SinhVienDocument>,
+    @InjectModel(SinhVien.name) private readonly sinhvienModel: PaginateModel<SinhVienDocument>,
   ) {
     super(model);
-    this.sinhvienModel = sinhvienModel;
   }
 
   public async aggregate(pipeline: any): Promise<any> {
