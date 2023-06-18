@@ -1,8 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import CustomLoggerService from '@lazy-module/logger/logger.service';
-import BaseService from '@base-inherit/base.service';
-import { SinhVienDocument } from '@features/f7-sinhvien/schemas/sinhvien.schema';
-import SinhVienRepository from '@features/f7-sinhvien/dto/sinhvien.repository';
 import SinhVienService from '@features/f7-sinhvien/sinhvien.service';
 import LopService from '@features/f4-lop/lop.service';
 import KetQuaService from '@features/f6-ketqua/ketqua.service';

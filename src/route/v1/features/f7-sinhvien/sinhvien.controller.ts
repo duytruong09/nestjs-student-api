@@ -18,7 +18,7 @@ import ParseObjectIdPipe from '@pipe/parse-object-id.pipe';
 import { ApiQueryParams } from '@decorator/api-query-params.decorator';
 import AqpDto from '@interceptor/aqp/aqp.dto';
 import { ApiTags } from '@nestjs/swagger';
-import UpdateSpecializeDto from '@features/f1-specialize/dto/update-specialize.dto';
+import UpdateSinhVienDto from '@features/f7-sinhvien/dto/update-sinhvien.dto';
 import SinhVienService from './sinhvien.service';
 import CreateSinhVienDto from './dto/create-sinhvien.dto';
 
@@ -60,7 +60,7 @@ export default class SinhVienController {
   @HttpCode(200)
   async update(
     @Param('id', ParseObjectIdPipe) id: Types.ObjectId,
-    @Body() body: UpdateSpecializeDto,
+    @Body() body: UpdateSinhVienDto,
   ): Promise<any> {
     return this.sinhvienService.updateOneById(id, body);
   }

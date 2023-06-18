@@ -2,7 +2,7 @@ import {
   IsDate, IsNotEmpty, IsNumber, IsString,
 } from 'class-validator';
 
-export default class CreateStudentDto {
+export default class CreateSinhVienDto {
   @IsNotEmpty()
   @IsString()
   readonly hoTen: string;

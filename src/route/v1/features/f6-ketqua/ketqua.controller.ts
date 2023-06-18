@@ -20,6 +20,7 @@ import AqpDto from '@interceptor/aqp/aqp.dto';
 import { ApiTags } from '@nestjs/swagger';
 import KetQuaService from './ketqua.service';
 import CreateKetQuaDto from './dto/create-ketqua.dto';
+import UpdateKetQuaDto from './dto/update-ketqua.dto';
 
 @ApiTags('KetQuas')
 @UseInterceptors(WrapResponseInterceptor)
@@ -47,5 +48,75 @@ export default class KetQuaController {
   @HttpCode(201)
   async create(@Body() body: CreateKetQuaDto): Promise<any> {
     return this.ketquaService.create(body);
+  }
+
+  /**
+   * update
+   * @param id
+   * @param body
+   * @returns
+   */
+  @Put(':id')
+  @HttpCode(200)
+  async update(
+    @Param('id', ParseObjectIdPipe) id: Types.ObjectId,
+    @Body() body: UpdateKetQuaDto,
+  ): Promise<any> {
+    return this.ketquaService.updateOneById(id, body);
+  }
+
+  /**
+   * Delete hard many by ids
+   * @param ids
+   * @returns
+   */
+  @Delete(':ids/ids')
+  // @HttpCode(204)
+  async deleteManyByIds(@Param('ids') ids: string): Promise<any> {
+    return this.ketquaService.deleteManyHardByIds(
+      ids.split(',').map((item: any) => new Types.ObjectId(item)),
+    );
+  }
+
+  /**
+   * Delete
+   * @param id
+   * @returns
+   */
+  @Delete(':id')
+  // @HttpCode(204)
+  async delete(
+    @Param('id', ParseObjectIdPipe) id: Types.ObjectId,
+  ): Promise<any> {
+    return this.ketquaService.deleteOneHardById(id);
+  }
+
+  /**
+   * paginate
+   * @param query
+   * @returns
+   */
+  @Get('paginate')
+  @HttpCode(200)
+  async paginate(@ApiQueryParams() query: AqpDto): Promise<any> {
+    return this.ketquaService.paginate(query); // return {results: [], limit, page, ....}
+  }
+
+  /**
+   * findOneById
+   * @param id
+   * @returns
+   */
+  @Get(':id')
+  @HttpCode(200)
+  async findOneById(
+    @Param('id', ParseObjectIdPipe) id: Types.ObjectId,
+    @ApiQueryParams('population') populate: AqpDto,
+  ): Promise<any> {
+    const result = await this.ketquaService.findOneById(id, { populate });
+
+    if (!result) throw new NotFoundException('The item does not exist');
+
+    return result;
   }
 }
